@@ -5,7 +5,7 @@ node {
     git url: 'https://github.com/theoskolnik/test-application-hello-world.git'
 
     stage 'Build'
-    dir("application1") {
+    dir("test-application-hello-world") {
         sh "./gradlew build"
     }
 
