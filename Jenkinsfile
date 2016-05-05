@@ -2,7 +2,7 @@ node {
 
     stage 'Checkout'
 
-    git url: 'https://github.com/theoskolnik/jenkins-pipeline-code.git'
+    git url: 'https://github.com/theoskolnik/test-application-hello-world.git'
 
     stage 'Build'
     dir("application1") {
