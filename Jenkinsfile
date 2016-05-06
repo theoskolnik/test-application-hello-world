@@ -6,6 +6,6 @@ node {
 
     stage 'Dependency Check'
     dir("test-application-hello-world") {
-        sh "export TERM=${TERM:-dumb} && ./gradlew dependencyCheck"
+        export TERM=${TERM:-dumb} && ./gradlew dependencyCheck
     }
 }
