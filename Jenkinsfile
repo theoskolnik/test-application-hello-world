@@ -9,6 +9,8 @@ node {
         sh "./gradlew build"
     }
 
-    stage 'Test'
-    sh "cat 'THIS IS OUR NEW JENKINSFILE'"
+    stage 'Dependency Check'
+    dir("test-application-hello-world") {
+        sh "./gradlew dependencyCheck"
+    }
 }
