@@ -2,10 +2,10 @@ node {
 
     stage 'Checkout'
 
-    git url: 'https://github.com/theoskolnik/test-application-hello-world.git'
+    git url: 'https://github.com/theoskolnik/test-application-hello-world.git', branch: 'master'
 
     stage 'Dependency Check'
-    dir("test-application-hello-world") {
-        export TERM=${TERM:-dumb} && ./gradlew dependencyCheck
-    }
+
+    sh 'export TERM=${TERM:-dumb} && ./gradlew dependencyCheck'
+    
 }
