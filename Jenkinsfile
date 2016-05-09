@@ -8,5 +8,5 @@ node {
 
     stage 'Dependency Check'
     sh 'export TERM=${TERM:-dumb} && ./gradlew dependencyCheck'
-    
+    archive 'build/reports/dependency-check-report.html'  
 }
