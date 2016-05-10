@@ -14,7 +14,7 @@ node {
 
     stage 'Performance Scan'
     sh './scan.sh QA'
-    step([$class: 'ArtifactArchiver', artifacts: 'build/reports/jmeter.log'])
+    step([$class: 'ArtifactArchiver', artifacts: 'jmeter_results.csv'])
 
     stage 'Deploy PROD'
     sh './deploy.sh PROD `cat version.txt`'
