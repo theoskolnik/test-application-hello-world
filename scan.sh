@@ -2,4 +2,4 @@
 
 echo "Scanning environment $1"
 
-jmeter -n -t ./test/performance/*.jmx
+/usr/local/jmeter -n -t ./test/performance/*.jmx
