@@ -13,7 +13,7 @@ node {
     stage 'Deploy QA'
     sh './deploy.sh QA `cat version.txt`'
 
-    stage 'Security Scan'
+    stage 'Performance Scan'
     sh './scan.sh QA'
 
     stage 'Deploy PROD'
