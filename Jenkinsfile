@@ -1,5 +1,4 @@
 node {
-
     stage 'Checkout'
     git url: 'https://github.com/theoskolnik/test-application-hello-world.git', branch: 'master'
 
@@ -8,7 +7,7 @@ node {
 
     stage 'Dependency Check'
     sh './check_deps.sh'
-    archive 'build/reports/dependency-check-report.html'  
+    step([$class: 'ArtifactArchiver', artifacts: 'build/reports/dependency-check-report.html'])
 
     stage 'Deploy QA'
     sh './deploy.sh QA `cat version.txt`'
@@ -18,5 +17,4 @@ node {
 
     stage 'Deploy PROD'
     sh './deploy.sh PROD `cat version.txt`'
-    
 }
